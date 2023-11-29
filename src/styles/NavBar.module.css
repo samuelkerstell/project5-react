@@ -1,0 +1,9 @@
+.NavBar {
+    border: 1px solid black;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+}
+
+i {
+    color: #1b5028;
+}
