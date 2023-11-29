@@ -1,9 +1,14 @@
 .NavBar {
-    border: 1px solid black;
+    border: 1px solid #1b5028;
     font-family: 'Varela Round', sans-serif;
     font-weight: bold;
+    background-color: #ffffff;
 }
 
-i {
+.NavLink {
+    padding: 5px;
+  }
+  
+.Active i {
     color: #1b5028;
-}
+  }
