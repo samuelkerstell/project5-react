@@ -18,7 +18,7 @@ const SignUpForm = () => {
   
   const [errors, setErrors] = useState({});
 
-  const history = useHistory()
+  const history = useHistory();
   
   const handleChange = (event) => {
     setSignUpData({
