@@ -1,16 +1,17 @@
-import React, {useState} from "react";
+import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
 import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
 import Avatar from "./Avatar";
 import axios from "axios"
+import useClickOutsideToggle from "../hooks/useClickOutsideToggle";
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();
 
-  const [expanded, setExpanded] = useState(false)
+  const {expanded, setExpanded, ref} = useClickOutsideToggle();
 
   const handleSignOut = async() => {
     try {
@@ -94,6 +95,7 @@ const NavBar = () => {
                 </NavLink>
                 {currentUser && createPostIcon}         
                 <Navbar.Toggle 
+                  ref={ref}
                   onClick={() => setExpanded(!expanded)} 
                   aria-controls="basic-navbar-nav" 
                 />
