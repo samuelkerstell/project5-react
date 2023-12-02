@@ -1,13 +1,67 @@
-import React from "react";
+import React, {useState} from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import styles from "../styles/NavBar.module.css";
 import { NavLink } from "react-router-dom";
-import { useCurrentUser } from "../context/CurrentUserContext";
+import { useCurrentUser, useSetCurrentUser } from "../contexts/CurrentUserContext";
+import Avatar from "./Avatar";
+import axios from "axios"
 
 const NavBar = () => {
   const currentUser = useCurrentUser();
+  const setCurrentUser = useSetCurrentUser();
 
-  const loggedInIcons = <>{currentUser?.username}</>;
+  const [expanded, setExpanded] = useState(false)
+
+  const handleSignOut = async() => {
+    try {
+      await axios.post("dj-rest-auth/logout/");
+      setCurrentUser(null);
+    } catch(err) {
+      console.log(err);
+    }
+  };
+
+  const createPostIcon = (
+    <NavLink
+      className={styles.NavLink}
+      activeClassName={styles.Active}
+      to="/posts/create"
+    >
+      <i className="fa-solid fa-plus"></i>Create Post
+    </NavLink>
+  )
+
+  const loggedInIcons = (
+    <>
+      <NavLink
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+        to="/explore"
+      >
+        <i className="fa-solid fa-images"></i>Explore
+      </NavLink>
+      <NavLink
+        to="/liked"
+        className={styles.NavLink}
+        activeClassName={styles.Active}
+      >
+        <i className="fa-solid fa-heart"></i>Liked
+      </NavLink>
+      <NavLink
+        to="/"
+        className={styles.NavLink}
+        onClick={handleSignOut}
+      >
+        <i className="fa-solid fa-right-to-bracket"></i>Sign Out
+      </NavLink>
+      <NavLink
+        to={`/profiles/${currentUser?.profile_id}`}
+        className={styles.NavLink}
+      >
+        <Avatar src={currentUser?.profile_image} text="Profile" height={40} />
+      </NavLink>
+    </>
+  )
 
   const loggedOutIcons = (
     <>
@@ -29,7 +83,7 @@ const NavBar = () => {
   );
   
   return (
-    <Navbar className={styles.NavBar}  expand="md" fixed="top">
+    <Navbar expanded={expanded} className={styles.NavBar}  expand="md" fixed="top">
             <Container>
                 <NavLink to="/">
                 <Navbar.Brand style={{ color: '#1b5028' }}>
@@ -37,8 +91,12 @@ const NavBar = () => {
                     <i class="fa-solid fa-golf-ball-tee" style={{ color: '#1b5028' }}></i>
                     LF SHOT
                 </Navbar.Brand>
-                </NavLink>               
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                </NavLink>
+                {currentUser && createPostIcon}         
+                <Navbar.Toggle 
+                  onClick={() => setExpanded(!expanded)} 
+                  aria-controls="basic-navbar-nav" 
+                />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                     <NavLink 
