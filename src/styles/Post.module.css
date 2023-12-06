@@ -6,19 +6,19 @@
     text-align: center;
   }
   
-  .Post figure,
+.Post figure,
   h5 {
     margin: 0 0;
   }
   
-  .Heart {
+.Heart {
     color: #f85032;
   }
   
-  .Heart:hover {
+.Heart:hover {
     color: #2142b2;
   }
   
-  .HeartOutline:hover {
+.HeartOutline:hover {
     color: #f85032;
   }
