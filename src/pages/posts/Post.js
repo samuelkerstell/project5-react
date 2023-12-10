@@ -31,6 +31,12 @@ const Post = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  console.log('like_id:', like_id);
+  console.log('dislike_id:', dislike_id);
+  
+  const [isLiked, setIsLiked] = React.useState(like_id !== null);
+  const [isDisliked, setIsDisliked] = React.useState(dislike_id !== null);
+
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`)
   }
@@ -44,22 +50,35 @@ const Post = (props) => {
     }
   };
 
+  //Like
   const handleLike = async () => {
     try {
-      const { data } = await axiosRes.post("/likes/", { post: id });
-      setPosts((prevPosts) => ({
-        ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-            : post;
-        }),
-      }));
+      if (isDisliked && !isLiked) {
+        await axiosRes.delete(`/dislikes/${dislike_id}/`);
+        setPosts((prevPosts) => ({
+          ...prevPosts,
+          results: prevPosts.results.map((post) => (
+            post.id === id ? { ...post, dislikes_count: post.dislikes_count - 1, dislike_id: null } : post
+          )),
+        }));
+        setIsDisliked(false);
+      }
+  
+      if (!isLiked) {
+        const { data } = await axiosRes.post("/likes/", { post: id });
+        setPosts((prevPosts) => ({
+          ...prevPosts,
+          results: prevPosts.results.map((post) => (
+            post.id === id ? { ...post, likes_count: post.likes_count + 1, like_id: data.id } : post
+          )),
+        }));
+        setIsLiked(true);
+      }
     } catch (err) {
       console.log(err);
     }
   };
-
+  
   const handleUnlike = async () => {
     try {
       await axiosRes.delete(`/likes/${like_id}/`);
@@ -71,24 +90,36 @@ const Post = (props) => {
             : post;
         }),
       }));
+      setIsLiked(false);
     } catch (err) {
       console.log(err);
     }
   };
-
-
   
+  // Dislike
   const handleDislike = async () => {
     try {
-      const { data } = await axiosRes.post("/dislikes/", { post: id });
-      setPosts((prevPosts) => ({
-        ...prevPosts,
-        results: prevPosts.results.map((post) => {
-          return post.id === id
-            ? { ...post, dislikes_count: post.dislikes_count + 1, dislike_id: data.id }
-            : post;
-        }),
-      }));
+      if (isLiked && !isDisliked) {
+        await axiosRes.delete(`/likes/${like_id}/`);
+        setPosts((prevPosts) => ({
+          ...prevPosts,
+          results: prevPosts.results.map((post) => (
+            post.id === id ? { ...post, likes_count: post.likes_count - 1, like_id: null } : post
+          )),
+        }));
+        setIsLiked(false);
+      }
+  
+      if (!isDisliked) {
+        const { data } = await axiosRes.post("/dislikes/", { post: id });
+        setPosts((prevPosts) => ({
+          ...prevPosts,
+          results: prevPosts.results.map((post) => (
+            post.id === id ? { ...post, dislikes_count: post.dislikes_count + 1, dislike_id: data.id } : post
+          )),
+        }));
+        setIsDisliked(true);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -105,6 +136,7 @@ const Post = (props) => {
             : post;
         }),
       }));
+      setIsDisliked(false);
     } catch (err) {
       console.log(err);
     }
