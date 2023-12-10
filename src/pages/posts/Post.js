@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { Card, Media, OverlayTrigger, Tooltip } from "react-bootstrap";
@@ -33,9 +33,10 @@ const Post = (props) => {
 
   console.log('like_id:', like_id);
   console.log('dislike_id:', dislike_id);
+
   
-  const [isLiked, setIsLiked] = React.useState(like_id !== null);
-  const [isDisliked, setIsDisliked] = React.useState(dislike_id !== null);
+  const [isLiked, setIsLiked] = useState(like_id !== null);
+  const [isDisliked, setIsDisliked] = useState(dislike_id !== null);
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`)
