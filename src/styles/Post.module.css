@@ -1,9 +1,9 @@
 .Post {
     background-color: #ffffff;
     border: 1px solid #dadadf;
-    border-radius: 2px;
+    border-radius: 4px;
     margin-bottom: 16px;
-    text-align: center;
+    
   }
   
 .Post figure,
@@ -12,7 +12,7 @@
   }
   
 .ThumbsUp {
-    color: #2142b2;
+    color: #1b5028;
   }
   
 .ThumbsUp:hover {
@@ -20,5 +20,17 @@
   }
   
 .ThumbsUpOutline:hover {
-    color: #2142b2;
+    color: #1b5028;
   }
+
+.Owner {
+  font-size: 120%;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.Date {
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #1b5028;
+}
