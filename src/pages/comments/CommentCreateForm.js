@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import styles from "../../styles/CommentCreateEditForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from "../../api/axiosDefaults";
 
@@ -44,7 +45,7 @@ function CommentCreateForm(props) {
   return (
     <Form className="mt-2" onSubmit={handleSubmit}>
       <Form.Group>
-        <InputGroup>
+        <InputGroup className={styles.Input}>
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profileImage} />
           </Link>
@@ -59,11 +60,11 @@ function CommentCreateForm(props) {
         </InputGroup>
       </Form.Group>
       <button
-        className={`${styles.Button} btn d-block ml-auto`}
+        className={`${btnStyles.Button} ${btnStyles.Black} d-block ms-auto mt-2`}
         disabled={!content.trim()}
         type="submit"
       >
-        post
+        Post
       </button>
     </Form>
   );
