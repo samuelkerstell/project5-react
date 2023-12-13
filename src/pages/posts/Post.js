@@ -35,8 +35,8 @@ const Post = (props) => {
   console.log('dislike_id:', dislike_id);
 
   
-  const [isLiked, setIsLiked] = useState(like_id !== null);
-  const [isDisliked, setIsDisliked] = useState(dislike_id !== null);
+  const [isLiked, setIsLiked] = useState(!!like_id);
+  const [isDisliked, setIsDisliked] = useState(!!dislike_id);
 
   const handleEdit = () => {
     history.push(`/posts/${id}/edit`)
@@ -51,9 +51,10 @@ const Post = (props) => {
     }
   };
 
-  //Like
+  //If disliked it removes the dislike and adds a like, if not disliked it just likes
   const handleLike = async () => {
     try {
+      console.log('Attempting to handle like...');
       if (isDisliked && !isLiked) {
         await axiosRes.delete(`/dislikes/${dislike_id}/`);
         setPosts((prevPosts) => ({
@@ -74,6 +75,7 @@ const Post = (props) => {
           )),
         }));
         setIsLiked(true);
+        console.log('Like action successful!');
       }
     } catch (err) {
       console.log(err);
@@ -97,7 +99,7 @@ const Post = (props) => {
     }
   };
   
-  // Dislike
+  // If liked it removes the like and adds a dislike, if not liked it just dislikes
   const handleDislike = async () => {
     try {
       if (isLiked && !isDisliked) {

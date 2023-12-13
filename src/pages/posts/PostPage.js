@@ -43,12 +43,15 @@ function PostPage() {
     handleMount();
   }, [id]);
 
-
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <RecommendedProfiles mobile />
-        <Post {...post.results[0]} setPosts={setPost} postPage />
+        <Post 
+          {...post.results[0]} 
+          setPosts={setPost}
+          postPage 
+        />
         <Container className={appStyles.Content}>
           {currentUser ? (
             <CommentCreateForm
