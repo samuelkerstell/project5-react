@@ -58,7 +58,6 @@ function SignInForm() {
             <Container className={`${appStyles.Content} p-4 `}>
               <h1 className={styles.Header}>sign in</h1>
               <Form onSubmit={handleSubmit}>
-
                 <Form.Group controlId="username">
                     <Form.Label className="d-none">Username</Form.Label>
                     <Form.Control
@@ -91,12 +90,8 @@ function SignInForm() {
                         {message}
                     </Alert>
                 ))}
-
-                <Form.Group controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
                 <Button 
-                    className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`} 
+                    className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Black}`}
                     type="submit"
                 >
                     Sign In

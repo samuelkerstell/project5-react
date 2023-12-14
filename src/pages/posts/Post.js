@@ -163,10 +163,10 @@ const Post = (props) => {
       <Link to={`/posts/${id}`}>
         <Card.Img src={image} alt={title} />
       </Link>
-      <Card.Body className="text-center">
-        {title && <Card.Title className="text-center">{title}</Card.Title>}
-        {content && <Card.Text>{content}</Card.Text>}
-        <div className={styles.PostBar}>
+      <Card.Body>
+        {title && <Card.Title className={`${styles.Title} text-center`}>{title}</Card.Title>}
+        {content && <Card.Text className="text-center pt-2">{content}</Card.Text>}
+        <div className="text-end">
           {is_owner ? (
             <OverlayTrigger
               placement="top"

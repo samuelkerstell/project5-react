@@ -1,11 +1,10 @@
 .Post {
     background-color: #ffffff;
     border: 1px solid #dadadf;
-    border-radius: 4px;
+    border-radius: 16px;
     margin-bottom: 16px;
-    
-  }
-  
+}
+
 .Post figure,
   h5 {
     margin: 0 0;
@@ -29,8 +28,17 @@
   letter-spacing: 1px;
 }
 
+.OwnerTitle {
+  position: inherit;
+}
+
 .Date {
   font-weight: 600;
   letter-spacing: 2px;
   color: #1b5028;
+}
+
+.Title {
+  font-weight: 600;
+  letter-spacing: 1px;
 }
