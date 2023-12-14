@@ -4,6 +4,7 @@ import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
+import styles from "../../styles/RecommendedProfiles.module.css"
 
 const RecommendedProfiles = ({ mobile }) => {
   const { recommendedProfiles } = useProfileData();
@@ -16,7 +17,7 @@ const RecommendedProfiles = ({ mobile }) => {
     >
       {recommendedProfiles.results.length ? (
         <>
-          <p>Recommended profiles.</p>
+          <p className={styles.Title}>Recommended profiles</p>
           {mobile ? (
             <div className="d-flex justify-content-around">
               {recommendedProfiles.results.slice(0, 4).map((profile) => (
