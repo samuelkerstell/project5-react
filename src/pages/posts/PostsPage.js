@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
 
 import Post from "./Post";
 import Asset from "../../components/Asset";
@@ -30,22 +31,41 @@ function PostsPage({ message, filter = " "}) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const {data} = await axiosReq.get(`/posts/?${filter}`);
+        const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         setPosts(data);
         setHasLoaded(true);
-      } catch(err) {
+      } catch (err) {
         console.log(err);
       }
     };
 
     setHasLoaded(false);
-    fetchPosts();
-  }, [filter, query, pathname, currentUser]);
+    const timer = setTimeout(() => {
+      fetchPosts();
+    }, 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [filter, query, pathname], currentUser);
   
   return (
     <Row className="h-100">
       <Col className="py-2 p-0 p-lg-2" lg={8}>
         <RecommendedProfiles mobile />
+        <i className={`fas fa-search d-lg-none ${styles.SearchIcon}`} />
+        <Form
+          className={`${styles.SearchBar} d-lg-none`}
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <Form.Control
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            type="text"
+            className="mr-sm-2"
+            placeholder="Search posts"
+          />
+        </Form>
         {hasLoaded ? (
           <>
             {posts.results.length ? (
@@ -74,6 +94,19 @@ function PostsPage({ message, filter = " "}) {
         )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
+        <i className={`fas fa-search ${styles.SearchIcon}`} />
+        <Form
+          className={styles.SearchBar}
+          onSubmit={(event) => event.preventDefault()}
+        >
+          <Form.Control
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            type="text"
+            className="mr-sm-2"
+            placeholder="Search posts"
+          />
+        </Form>
         <RecommendedProfiles />
       </Col>
     </Row>

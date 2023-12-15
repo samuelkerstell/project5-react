@@ -101,13 +101,13 @@ function PostCreateForm() {
           </Alert>
       ))}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Black} m-3`}
         onClick={() => {}}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+      <Button className={`${btnStyles.Button} ${btnStyles.Black} m-3`} type="submit">
+        Create
       </Button>
     </div>
   );
@@ -127,7 +127,7 @@ function PostCreateForm() {
                   </figure>
                   <div>
                     <Form.Label
-                      className={`${btnStyles.Button} ${btnStyles.Blue} btn`}
+                      className={`${btnStyles.Button} ${btnStyles.Black} btn`}
                       htmlFor="image-upload"
                     >
                       Change the media
@@ -151,6 +151,7 @@ function PostCreateForm() {
                 accept="image/*, video/*"
                 onChange={handleChangeMedia}
                 ref={mediaInput}
+                style={{ display: 'none' }}
               />
             </Form.Group>
             {errors.image?.map((message, idx) => (

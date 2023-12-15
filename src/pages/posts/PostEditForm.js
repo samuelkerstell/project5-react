@@ -151,6 +151,7 @@ function PostEditForm() {
                 accept="image/*, video/*"
                 onChange={handleChangeMedia}
                 ref={mediaInput}
+                style={{ display: 'none' }}
               />
             </Form.Group>
             {errors.image?.map((message, idx) => (
