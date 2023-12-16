@@ -511,9 +511,8 @@ No errors were shown when passed through the W3C HTML validation checker.
 
 
 ### W3C CSS validator
-All CSS files were passed through the W3C validator. The following errors and warnings were flagged:
-Parse error
-
+All CSS files were passed through the W3C validator without any errors. The following errors and warnings were flagged when passing the url instead of files:
+![CSS Error](/readme-assets/CSS%20Errors.png)
 
 ### JSHint JavaScript validator
 JSHint was used to validate the JavaScript files and no errors reported in the JavaScript code. Some syntax errors where reported but these were all in the JSX code.
