@@ -10,30 +10,27 @@ The primary goal of this project is to develop a user-friendly web application t
   * [Project goals](#project-goals)
   * [Table of contents](#table-of-contents)
   * [User stories](#user-stories)
-    + [Themes](#themes)
-    + [Epics](#epics)
-    + [User stories](#user-stories-1)
   * [Agile development methodology](#agile-development-methodology)
   * [Planning](#planning)
-    + [Mockups](#mockups)
-    + [Data models](#data-models)
+    + [Wireframe](#wireframe)
   * [Design](#design)
     + [Colours](#colours)
     + [Fonts](#fonts)
   * [Features](#features)
   * [Frameworks, libraries and dependencies](#frameworks--libraries-and-dependencies)
-    + [React-Router-DOM](#react-router-dom)
-    + [ReactDOM](#reactdom)
     + [Axios](#axios)
     + [JWT Decode](#jwt-decode)
-  * [React features used to enhance user experience](#react-features-used-to-enhance-user-experience)
-    + [Custom hooks](#custom-hooks)
+    + [React Bootstrap](#jwt-decode)
+    + [React Infinite Scroll](#react-infinite-scroll)
+    + [React-DOM](#react-dom)
+    + [React-Router-DOM](#react-router-dom)
+    + [Font Awesome](#font-awesome)
   * [Testing](#testing)
     + [Manual testing](#manual-testing)
+    + [Responsiveness Testing](#responsiveness-testing)
     + [Validator testing](#validator-testing)
     + [W3C CSS validator](#w3c-css-validator)
-    + [ESLint JavaScript validator](#eslint-javascript-validator)
-    + [WAVE web accessability testing](#wave-web-accessability-testing)
+    + [JSHint JavaScript validator](#jshint-javascript-validator)
     + [Lighthouse testing](#lighthouse-testing)
     + [Resolved bugs](#resolved-bugs)
     + [Unresolved bugs](#unresolved-bugs)
@@ -69,15 +66,17 @@ Wireframes made for mobile version made in Paint:
 
 
 ## Design
-### Colors
+### Colours
 | Color         |Hex    |
 | ---------- | ------ |
 | Forest Green | ![#1b5028](https://via.placeholder.com/40/1B5028?text=+) #1b5028|
 | Rolex Green | ![#006039](https://via.placeholder.com/40/006039?text=+) #006039|
+| Rolex Gold | ![#A37E2C](https://via.placeholder.com/40/A37E2C?text=+) #a37e2c|
 | White | ![#ffffff](https://via.placeholder.com/40/ffffff?text=+) #ffffff |
 | Light Grey | ![ #dadadf](https://via.placeholder.com/40/dadadf?text=+)  #dadadf |
 | Grey | ![#c1c1c5](https://via.placeholder.com/40/c1c1c5?text=+) #c1c1c5 |
 | Off White | ![#f5f5f5](https://via.placeholder.com/40/f5f5f5?text=+) #f5f5f5 |
+
 
 The choice of Forest green was chosen to reflect the essence of golf and golf courses. Rolex green, lighter than forest green, was used as a subtle background, maintaining harmony without overpowering the design. This color combination, along with white, created a visually appealing and user-friendly interface, aligning with golfs aesthetics while keeping the design simple and modern.
 
@@ -99,14 +98,16 @@ Poppins was used for the rest of the application, maintains a clean and modern a
 The Navbar allows users to navigate through the site easily.
 The Navbar contains the Logo, Home, Feed, Liked, Sign In/Out, Sign Up and the Avatar that takes the user to their profile page.
 
-Navbar Logged In:
+#### Navbar Signed In:
+![Navbar](/readme-assets/Navbar.png)
 
-
-Navbar Logged Out:
+#### Navbar Signed Out:
+![NavbarLoggedOut](/readme-assets/NavbarLoggedOut.png)
 
 
 ### Sign Up form
 [User Story: Sign Up Form](https://github.com/samuelkerstell/project5-react/issues/29)
+![SignUpForm](/readme-assets/SignUpForm.png)
 
 
 The sign up form allows users to create an account if the form is valid. If the form is not valid the user will be alerted.
@@ -114,6 +115,7 @@ The sign up form allows users to create an account if the form is valid. If the 
 
 ### Sign in form
 [User Story: Sign In Form](https://github.com/samuelkerstell/project5-react/issues/28)
+![SignInForm](/readme-assets/SignInForm.png)
 
 
 The sign up form allows users sign in to their account if the form is valid. If the form is not valid the user will be alerted.
@@ -123,6 +125,7 @@ The sign up form allows users sign in to their account if the form is valid. If 
 [User Story: View Posts](https://github.com/samuelkerstell/project5-react/issues/16)  
 [User Story: Search Posts](https://github.com/samuelkerstell/project5-react/issues/17)  
 [User Story: Infinite Scroll](https://github.com/samuelkerstell/project5-react/issues/19)
+![PostsPage](/readme-assets/PostsPage.png)
 
 
 The Posts Page contains all the latest posts from our golfers with the ability to like or dislike posts. The infinite scroll is implemented to keep loading posts instead of having to click "next page".
@@ -136,9 +139,15 @@ The Posts Page contains all the latest posts from our golfers with the ability t
 [User Story: Edit Comment](https://github.com/samuelkerstell/project5-react/issues/23)  
 [User Story: Delete Comment](https://github.com/samuelkerstell/project5-react/issues/22)  
 [User Story: Comment Date](https://github.com/samuelkerstell/project5-react/issues/21)
+![PostPage](/readme-assets/PostPage.png)
 
 
 The Post Page enables users to access and interact with a detailed post. Users can view comments, comment dates, and comment on posts. Additionally, owner of the post have the ability to edit or delete the post.
+
+
+### Recommended Profiles
+![Recommended profiles](/readme-assets/RecommendedProfiles.png)
+Shows the most followed profiles in a list with follow buttons to easily follow them.
 
 
 ### Feed Page
@@ -154,7 +163,8 @@ The Liked page is a modified version of the Posts page. It displays only the pos
 
 
 ### Search bar
-[User Story: Search Posts](https://github.com/samuelkerstell/project5-react/issues/17)
+[User Story: Search Posts](https://github.com/samuelkerstell/project5-react/issues/17)   
+![Searchbar](/readme-assets/Searchbar.png)
 
 
 The Search Bar allows user to search for posts or posts from certain users.
@@ -162,6 +172,7 @@ The Search Bar allows user to search for posts or posts from certain users.
 
 ### Add Post 
 [User Story: Add Post](https://github.com/samuelkerstell/project5-react/issues/2)
+![CreatePost](/readme-assets/CreatePost.png)
 
 
 The Add Post page allows logged in users to easily create posts containing an image, title and content.
@@ -169,14 +180,15 @@ The Add Post page allows logged in users to easily create posts containing an im
 
 ### Edit Post Page
 [User Story: Edit Post](https://github.com/samuelkerstell/project5-react/issues/4)
-
+![EditPostPage](/readme-assets/UpdatePostPage.png)
 
 The Edit Post page allows users to modify their existing posts. It displays the user's current image, title, content, and provides editable fields for each element.
 
 
 ### Like & Dislike
 [User Story: Like A Post](https://github.com/samuelkerstell/project5-react/issues/13)  
-[User Story: Dislike A Post](https://github.com/samuelkerstell/project5-react/issues/14)
+[User Story: Dislike A Post](https://github.com/samuelkerstell/project5-react/issues/14)   
+![LikeDislike](/readme-assets/LikeDislike.png)
 
 
 Signed In users can show their thoughts on a post by liking or disliking a post.
@@ -189,14 +201,17 @@ Owners of a post can not like or dislike their own posts.
 [User Story: Add Comment](https://github.com/samuelkerstell/project5-react/issues/20)  
 [User Story: Edit Comment](https://github.com/samuelkerstell/project5-react/issues/23)  
 [User Story: Delete Comment](https://github.com/samuelkerstell/project5-react/issues/22)  
-[User Story: Comment Date](https://github.com/samuelkerstell/project5-react/issues/21) 
+[User Story: Comment Date](https://github.com/samuelkerstell/project5-react/issues/21)    
+![Comments](/readme-assets/Comment.png)
+![Comments](/readme-assets/CommentForm.png)
 
 
 The comments section is found on the Post Page. Signed out users can view all comments. Signed in user can view all comments and also add their own comment. Owner of a comment can edit and delete their comment.
 
 
 ### Follow & Unfollow
-[User Story: Follow/Unfollow Users](https://github.com/samuelkerstell/project5-react/issues/31)
+[User Story: Follow/Unfollow Users](https://github.com/samuelkerstell/project5-react/issues/31)   
+![FollowUnfollow](/readme-assets/FollowUnfollow.png)  
 
 
 Logged In users can follow and unfollow users to keep up with their posts.
@@ -205,14 +220,33 @@ Logged In users can follow and unfollow users to keep up with their posts.
 ### Profile Page
 [User Story: Profile Page](https://github.com/samuelkerstell/project5-react/issues/25)  
 [User Story: Edit Profile](https://github.com/samuelkerstell/project5-react/issues/26)  
-[User Story: Update Username & Password](https://github.com/samuelkerstell/project5-react/issues/27)
+[User Story: Update Username & Password](https://github.com/samuelkerstell/project5-react/issues/27)   
+![ProfilePage](/readme-assets/ProfilePage.png)
 
 
 The Profile Page shows profile statistics such as post count, follower count, following count and posts from a user.
 The owner of the profile can click the dropdown menu to update profile image, username,password and the biography.
 
 
+### Profile Edit Page
+[User Story: Edit Profile](https://github.com/samuelkerstell/project5-react/issues/26)  
+![ProfileEdit](/readme-assets/EditProfile.png)
+The profile edit page allows users to update their profile image and bio.
+
+
+### Username Change page
+[User Story: Update Username & Password](https://github.com/samuelkerstell/project5-react/issues/27)   
+![ChangeUsername](/readme-assets/ChangeUsername.png)
+The Username Change page allows users to update their username.
+
+
+### Password Change Page
+[User Story: Update Username & Password](https://github.com/samuelkerstell/project5-react/issues/27)   
+![ChangePassword](/readme-assets/ChangeUsername.png)
+The Password Change page allows users to update their password.
+
 ### Not Found Page
+![NotFound](/readme-assets/NotFound.png)    
 The "Page Not Found" page appears whenever a user attempts to access a page that isn't allowed or doesn't exist within the application.
 
 
@@ -327,18 +361,12 @@ To implement infinite scrolling.
 ### React-Router-DOM
 React Router DOM was integrated into the project to facilitate the creation of single-page applications. By utilizing this library, the Golf Shot application could consist of numerous pages or components without the need to refresh the entire page.
 
-### React Router 
-
-To control what the user sees depending on the URL they have accessed in the browser.
-
 ### Font Awesome
 [Font Awesome](https://fontawesome.com) was used for fonts on the site.
 
 
 ## Testing
 ### Manual testing
-
-## Manual Testing
 | `Feature` | `Expected Outcome` | `Testing Performance` | `Result` | `Pass/Fail`|
 | ----------|--------------------|-----------------------|----------|------------|
 | `Navbar Signed Out` |  |
@@ -454,26 +482,54 @@ To control what the user sees depending on the URL they have accessed in the bro
 | Save button | Password change is saved | Clicked save button |Password change was saved | Pass |
 
 
+### Responsiveness Testing
+Full testing was performed on the following devices:
+* PC:
+  * Desktop PC
+* Laptop:
+  * Macbook Air 2021 13.6-inch screen
+* Mobile Devices:
+  * iPhone 13
+
+Desktop PC tested the site using the following browsers:
+* Google Chrome
+* Opera
+* Firefox
+
+The Apple devices tested the site using the following browsers:
+* Safari
+* Google Chrome
+
+I've confirmed that the site is responsive and looks good on different screen sizes.
+
+
 ### Validator testing
+
+
+### W3C HTML validator
+No errors were shown when passed through the W3C HTML validation checker.
 
 
 ### W3C CSS validator
 All CSS files were passed through the W3C validator. The following errors and warnings were flagged:
+Parse error
 
 
-### ESLint JavaScript validator
-
-
-### WAVE web accessability testing
+### JSHint JavaScript validator
+JSHint was used to validate the JavaScript files and no errors reported in the JavaScript code. Some syntax errors where reported but these were all in the JSX code.
 
 
 ### Lighthouse testing
+![Lighthouse](/readme-assets/Lighthouse.png)   
+Performance is poor due to large image-size? (I've already compressed)
 
 
 ### Resolved bugs
+I resolved the issue with the search bar not registering searches by eliminating the space within the quotation marks in the query useState hook.
 
 
 ### Unresolved bugs
+At times, when liking a post and immediately refreshing the page, the toggle function for likes and dislikes may cease to work. This issue likely occurs because the like action might not have enough time to save. Consequently, this disrupts the logic flow, leaving the code uncertain about whether the post is liked, disliked, or in an undefined state.
 
 
 ## Deployment
