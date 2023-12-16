@@ -4,6 +4,8 @@ Golf Shot is a social media website where golfers all over the world can share t
 
 The primary goal of this project is to develop a user-friendly web application that allows image sharing among users. The platform aims to create a golf community where golfers can upload their images and interact through likes and comments on those images shared by others.
 
+![amiresponsive](/readme-assets/amiresponsive.png)
+
 
 ## Table of contents
 - [Golf Shot](#tribehub)
@@ -558,6 +560,7 @@ When deployment is complete, you will be given a link to the deployed site.
 ### Media
 - No results Icon [Icons8](https://icons8.com/icon/12773/search)
 - Upload Icon [Icons8](https://icons8.com/icon/113801/upload)
+- Favicon [Favicon](https://www.flaticon.com/free-icon/golf-ball_523666?term=golf+ball&page=1&position=12&origin=tag&related_id=523666)
 
 - [Google Fonts Poppins](https://fonts.google.com/?query=lato&sort=popularity)
 - [Google Fonts Varela Round](https://fonts.google.com/specimen/Varela+Round)
