@@ -1,12 +1,19 @@
+// React imports
 import React, { useState } from "react";
-import styles from "../../styles/Post.module.css";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import Avatar from "../../components/Avatar";
-import { axiosRes } from "../../api/axiosDefaults";
-import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import styles from "../../styles/Post.module.css";
+import { Link } from "react-router-dom";
+// Bootstrap imports
+import Tooltip from "react-bootstrap/Tooltip";
+import Card from "react-bootstrap/Card";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+// Component imports
+import Avatar from "../../components/Avatar";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import { MoreDropdown } from "../../components/MoreDropdown";
+// Axios imports
+import { axiosRes } from "../../api/axiosDefaults";
+
 
 const Post = (props) => {
   const {
@@ -51,7 +58,7 @@ const Post = (props) => {
     }
   };
 
-  //If disliked it removes the dislike and adds a like, if not disliked it just likes
+  //If disliked it removes the dislike and adds a like, if not disliked it likes
   const handleLike = async () => {
     try {
       console.log('Attempting to handle like...');
@@ -99,7 +106,7 @@ const Post = (props) => {
     }
   };
   
-  // If liked it removes the like and adds a dislike, if not liked it just dislikes
+  // If liked it removes the like and adds a dislike, if not liked it dislikes
   const handleDislike = async () => {
     try {
       if (isLiked && !isDisliked) {

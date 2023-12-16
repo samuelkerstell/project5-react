@@ -1,20 +1,23 @@
+// React imports
 import React, { useEffect, useRef, useState } from "react";
-
+import { useHistory } from "react-router";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+// Bootstrap imports
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
+// CSS imports
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-import { Image } from "react-bootstrap";
-
-import { useHistory } from "react-router";
+// Axios imports
 import { axiosReq } from "../../api/axiosDefaults";
-import Alert from "react-bootstrap/Alert";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+
+
 
 function PostEditForm() {
   const [errors, setErrors] = useState({});
@@ -115,12 +118,12 @@ function PostEditForm() {
           </Alert>
       ))}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => {}}
+        className={`${btnStyles.Button} ${btnStyles.Black} m-3`}
+        onClick={() => history.goBack()}
       >
         Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={`${btnStyles.Button} ${btnStyles.Black} m-3`} type="submit">
         Update
       </Button>
     </div>

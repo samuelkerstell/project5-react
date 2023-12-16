@@ -1,18 +1,20 @@
+// React imports
 import React, { useEffect, useState } from "react";
-
+import { useHistory, useParams } from "react-router-dom";
+// Bootstrap imports
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-
-import { useHistory, useParams } from "react-router-dom";
-import { axiosRes } from "../../api/axiosDefaults";
-import { useCurrentUser } from "../../contexts/CurrentUserContext";
-
+// CSS imports
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+// Axios imports
+import { axiosRes } from "../../api/axiosDefaults";
+// Component imports
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 const UserPasswordForm = () => {
   const history = useHistory();
@@ -88,16 +90,16 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.Button} ${btnStyles.Black} m-3`}
               onClick={() => history.goBack()}
             >
-              cancel
+              Cancel
             </Button>
             <Button
               type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={`${btnStyles.Button} ${btnStyles.Black} m-3`}
             >
-              save
+              Save
             </Button>
           </Form>
         </Container>

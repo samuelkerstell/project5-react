@@ -1,23 +1,26 @@
+// React imports
 import React, { useRef, useState } from "react";
-
+import { useHistory } from "react-router";
+// Bootstrap imports
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
+// Asset imports
 import Upload from "../../assets/upload.png";
-
+// CSS imports
 import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
+// Component imports
 import Asset from "../../components/Asset"
-import { Image } from "react-bootstrap";
-
-import { useHistory } from "react-router";
-import { axiosReq } from "../../api/axiosDefaults";
-import Alert from "react-bootstrap/Alert";
 import {useRedirect} from "../../hooks/useRedirect"
+// Axios imports
+import { axiosReq } from "../../api/axiosDefaults";
+
 
 function PostCreateForm() {
   useRedirect('loggedOut');
@@ -102,12 +105,12 @@ function PostCreateForm() {
       ))}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Black} m-3`}
-        onClick={() => {}}
+        onClick={() => history.goBack()}
       >
         Cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Black} m-3`} type="submit">
-        Create
+        Post
       </Button>
     </div>
   );

@@ -1,13 +1,16 @@
+// React imports
 import React, { useState } from "react";
-import styles from '../../styles/Comment.module.css';
 import { Link } from "react-router-dom";
-import { Media } from 'react-bootstrap'
+// CSS imports
+import styles from '../../styles/Comment.module.css';
+// Component imports
+import Media from 'react-bootstrap/Media'
 import Avatar from '../../components/Avatar'
 import { useCurrentUser } from '../../contexts/CurrentUserContext'
 import { MoreDropdown } from '../../components/MoreDropdown'
-import { axiosRes } from '../../api/axiosDefaults';
-
 import CommentEditForm from "./CommentEditForm";
+// Axios import
+import { axiosRes } from '../../api/axiosDefaults';
 
 const Comment = (props) => {
   const {

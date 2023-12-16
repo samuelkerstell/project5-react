@@ -1,6 +1,7 @@
+// React imports
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
-
+// Bootstrap imports
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
@@ -8,15 +9,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-
+// CSS imports
+import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
+// Axios imports
 import { axiosReq } from "../../api/axiosDefaults";
+// Components imports
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
 
-import btnStyles from "../../styles/Button.module.css";
-import appStyles from "../../App.module.css";
 
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
@@ -102,13 +105,13 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={`${btnStyles.Button} ${btnStyles.Black} m-3`}
         onClick={() => history.goBack()}
       >
-        cancel
+        Cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        save
+      <Button className={`${btnStyles.Button} ${btnStyles.Black} m-3`} type="submit">
+        Save
       </Button>
     </>
   );
@@ -141,6 +144,7 @@ const ProfileEditForm = () => {
                 id="image-upload"
                 ref={imageFile}
                 accept="image/*"
+                style={{ display: 'none' }}
                 onChange={(e) => {
                   if (e.target.files.length) {
                     setProfileData({

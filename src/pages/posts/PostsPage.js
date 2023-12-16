@@ -1,25 +1,27 @@
+// React imports
 import React, { useEffect, useState } from "react";
-
+import { useLocation } from "react-router";
+import InfiniteScroll from "react-infinite-scroll-component";
+// Bootstrap imports
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-
-import Post from "./Post";
-import Asset from "../../components/Asset";
-
+//CSS imports
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PostsPage.module.css";
-import { useLocation } from "react-router";
+// Axios imports
 import { axiosReq } from "../../api/axiosDefaults";
-
+// Asset imports
 import NoResults from "../../assets/no-results.png";
-import InfiniteScroll from "react-infinite-scroll-component";
+// Component imports
 import { fetchMoreData } from "../../utils/utils";
 import RecommendedProfiles from "../profiles/RecommendedProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Post from "./Post";
+import Asset from "../../components/Asset";
 
-function PostsPage({ message, filter = " "}) {
+function PostsPage({ message, filter = ""}) {
   const [posts, setPosts] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
   const { pathname } = useLocation();
@@ -31,6 +33,8 @@ function PostsPage({ message, filter = " "}) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
+        const url = `/posts/?${filter}search=${query}`;
+        console.log('url', JSON.stringify(url, null, 2))
         const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         setPosts(data);
         setHasLoaded(true);

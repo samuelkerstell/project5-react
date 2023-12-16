@@ -1,12 +1,15 @@
+// React imports
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+// Bootstrap imports
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-
+// CSS imports
 import styles from "../../styles/CommentCreateEditForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
+// Component imports
 import Avatar from "../../components/Avatar";
+// Axios import
 import { axiosRes } from "../../api/axiosDefaults";
 
 function CommentCreateForm(props) {

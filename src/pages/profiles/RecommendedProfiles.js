@@ -1,10 +1,14 @@
+// React imports
 import React from "react";
+// Bootstrap imports
 import { Container } from "react-bootstrap";
+// CSS imports
 import appStyles from "../../App.module.css";
+import styles from "../../styles/RecommendedProfiles.module.css"
+// Component imports
 import Asset from "../../components/Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 import Profile from "./Profile";
-import styles from "../../styles/RecommendedProfiles.module.css"
 
 const RecommendedProfiles = ({ mobile }) => {
   const { recommendedProfiles } = useProfileData();
