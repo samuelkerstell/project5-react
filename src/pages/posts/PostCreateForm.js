@@ -16,8 +16,8 @@ import styles from "../../styles/PostCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 // Component imports
-import Asset from "../../components/Asset"
-import {useRedirect} from "../../hooks/useRedirect"
+import Asset from "../../components/Asset";
+import {useRedirect} from "../../hooks/useRedirect";
 // Axios imports
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -32,8 +32,8 @@ function PostCreateForm() {
   });
   const {title, content, image} = postData;
   
-  const mediaInput = useRef(null)
-  const history = useHistory()
+  const mediaInput = useRef(null);
+  const history = useHistory();
 
   const handleChange = (event) => {
     setPostData({
@@ -44,7 +44,7 @@ function PostCreateForm() {
 
   const handleChangeMedia = (event) => {
     if (event.target.files.length){
-        URL.revokeObjectURL(image)
+        URL.revokeObjectURL(image);
         setPostData({
             ...postData,
             image: URL.createObjectURL(event.target.files[0]),

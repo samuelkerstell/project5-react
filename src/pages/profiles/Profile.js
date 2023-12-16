@@ -1,11 +1,11 @@
 // React imports
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 // Bootstrap imports
 import Button from 'react-bootstrap/Button';
 // CSS imports
-import styles from "../../styles/Profile.module.css"
-import btnStyles from "../../styles/Button.module.css"
+import styles from "../../styles/Profile.module.css";
+import btnStyles from "../../styles/Button.module.css";
 // Component imports
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import Avatar from "../../components/Avatar";

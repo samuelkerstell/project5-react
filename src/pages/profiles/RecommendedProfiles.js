@@ -4,7 +4,7 @@ import React from "react";
 import { Container } from "react-bootstrap";
 // CSS imports
 import appStyles from "../../App.module.css";
-import styles from "../../styles/RecommendedProfiles.module.css"
+import styles from "../../styles/RecommendedProfiles.module.css";
 // Component imports
 import Asset from "../../components/Asset";
 import { useProfileData } from "../../contexts/ProfileDataContext";

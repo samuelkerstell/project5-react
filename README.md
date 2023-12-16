@@ -558,7 +558,7 @@ When deployment is complete, you will be given a link to the deployed site.
 
 ### Media
 - No results Icon [Icons8](https://icons8.com/icon/12773/search)
-
+- Upload Icon [Icons8](https://icons8.com/icon/113801/upload)
 
 - [Google Fonts Poppins](https://fonts.google.com/?query=lato&sort=popularity)
 - [Google Fonts Varela Round](https://fonts.google.com/specimen/Varela+Round)

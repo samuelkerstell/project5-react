@@ -37,24 +37,20 @@ const Post = (props) => {
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
-
-  console.log('like_id:', like_id);
-  console.log('dislike_id:', dislike_id);
-
   
   const [isLiked, setIsLiked] = useState(!!like_id);
   const [isDisliked, setIsDisliked] = useState(!!dislike_id);
 
   const handleEdit = () => {
-    history.push(`/posts/${id}/edit`)
-  }
+    history.push(`/posts/${id}/edit`);
+  };
 
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
   };
 

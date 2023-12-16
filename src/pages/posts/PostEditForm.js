@@ -18,7 +18,6 @@ import btnStyles from "../../styles/Button.module.css";
 import { axiosReq } from "../../api/axiosDefaults";
 
 
-
 function PostEditForm() {
   const [errors, setErrors] = useState({});
   const [postData, setPostData] = useState({
@@ -28,8 +27,8 @@ function PostEditForm() {
   });
   const {title, content, image} = postData;
   
-  const mediaInput = useRef(null)
-  const history = useHistory()
+  const mediaInput = useRef(null);
+  const history = useHistory();
   const { id } = useParams();
 
   useEffect(() => {

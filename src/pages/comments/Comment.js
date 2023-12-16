@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 // CSS imports
 import styles from '../../styles/Comment.module.css';
 // Component imports
-import Media from 'react-bootstrap/Media'
-import Avatar from '../../components/Avatar'
-import { useCurrentUser } from '../../contexts/CurrentUserContext'
-import { MoreDropdown } from '../../components/MoreDropdown'
+import Media from 'react-bootstrap/Media';
+import Avatar from '../../components/Avatar';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import { MoreDropdown } from '../../components/MoreDropdown';
 import CommentEditForm from "./CommentEditForm";
 // Axios import
 import { axiosRes } from '../../api/axiosDefaults';
@@ -31,7 +31,7 @@ const Comment = (props) => {
 
   const handleDelete = async () => {
     try{
-      await axiosRes.delete(`/comments/${id}/`)
+      await axiosRes.delete(`/comments/${id}/`);
       setPost(prevPost => ({
         results: [{
           ...prevPost.results[0],
@@ -46,7 +46,7 @@ const Comment = (props) => {
     } catch(err){
 
     }
-  }
+  };
 
   return (
     <>
