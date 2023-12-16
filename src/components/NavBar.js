@@ -93,7 +93,7 @@ const NavBar = () => {
                 <NavLink to="/">
                 <Navbar.Brand style={{ color: '#1b5028' }}>
                     G
-                    <i class="fa-solid fa-golf-ball-tee" style={{ color: '#1b5028' }}></i>
+                    <i className="fa-solid fa-golf-ball-tee" style={{ color: '#1b5028' }}></i>
                     LF SHOT
                 </Navbar.Brand>
                 </NavLink>
@@ -111,7 +111,7 @@ const NavBar = () => {
                         activeClassName={styles.Active}
                         to="/"
                     >
-                        <i class="fa-solid fa-house"></i>
+                        <i className="fa-solid fa-house"></i>
                         Home
                     </NavLink>
                     {currentUser ? loggedInIcons: loggedOutIcons}
