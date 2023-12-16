@@ -90,14 +90,14 @@ const UserPasswordForm = () => {
               </Alert>
             ))}
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Black} m-3`}
+              className={`${btnStyles.Button} ${btnStyles.Green} m-3`}
               onClick={() => history.goBack()}
             >
               Cancel
             </Button>
             <Button
               type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Black} m-3`}
+              className={`${btnStyles.Button} ${btnStyles.Green} m-3`}
             >
               Save
             </Button>
