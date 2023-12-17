@@ -506,7 +506,7 @@ No errors were shown when passed through the W3C HTML validation checker.
 
 ### W3C CSS validator
 All CSS files were passed through the W3C validator without any errors. The following errors and warnings were flagged when passing the url instead of files:
-![CSS Error](/readme-assets/CSS%20Errors.png)
+![CSS Error](/readme-assets/CSSErrors.png)
 
 ### JSHint JavaScript validator
 JSHint was used to validate the JavaScript files and no errors reported in the JavaScript code. Some syntax errors where reported but these were all in the JSX code.
@@ -557,7 +557,7 @@ To deploy locally, follow these steps:
 ## Credits
 
 ### Code
-- Most of the code was used from what I learned from the Moments walkthrough
+- Most of the code was used from what I learned in the Moments walkthrough
 
 
 ### Media
