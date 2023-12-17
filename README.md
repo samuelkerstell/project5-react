@@ -509,7 +509,7 @@ All CSS files were passed through the W3C validator without any errors. The foll
 ![CSS Error](/readme-assets/CSSErrors.png)
 
 ### JSHint JavaScript validator
-JSHint was used to validate the JavaScript files and no errors reported in the JavaScript code. Some syntax errors where reported but these were all in the JSX code.
+[ESLint](https://eslint.org/play/) was used to validate the JavaScript files, every js file with an import got "Parsing error: 'import' and 'export' may appear only with 'sourceType: module'" on first import. I have no idea why because without import this project wouldn't work. Other than that no other errors were found.
 
 
 ### Lighthouse testing
