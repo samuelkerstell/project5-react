@@ -11,7 +11,7 @@ The primary goal of this project is to develop a user-friendly web application t
 
 
 ## Table of contents
-- [Golf Shot](#tribehub)
+- [Golf Shot](#golf-shot)
   * [Project goals](#project-goals)
   * [Table of contents](#table-of-contents)
   * [User stories](#user-stories)
@@ -488,7 +488,7 @@ React Router DOM was integrated into the project to facilitate the creation of s
 
 
 ### Responsiveness Testing
-Full testing was performed on the following devices:
+Responsiveness testing was performed on the following devices:
 * PC:
   * Desktop PC
 * Laptop:
@@ -496,21 +496,10 @@ Full testing was performed on the following devices:
 * Mobile Devices:
   * iPhone 13
 
-Desktop PC tested the site using the following browsers:
-* Google Chrome
-* Opera
-* Firefox
-
-The Apple devices tested the site using the following browsers:
-* Safari
-* Google Chrome
-
 I've confirmed that the site is responsive and looks good on different screen sizes.
 
 
 ### Validator testing
-
-
 ### W3C HTML validator
 No errors were shown when passed through the W3C HTML validation checker.
 
@@ -554,6 +543,17 @@ To deploy to Heroku, follow these steps:
 
 When deployment is complete, you will be given a link to the deployed site.
 
+
+To deploy locally, follow these steps:
+- Ensure Node.js and npm (Node Package Manager) are installed on your computer.
+- Make sure Git is installed to clone the repository.
+
+- Type "git clone https://github.com/samuelkerstell/project5-react.git" in the terminal
+- Enter "cd project5-react" to navigate to project directory
+- Enter "npm install" to install dependencies
+- Enter "npm start" to start the application then open the server in your web browser.
+
+
 ## Credits
 
 ### Code
@@ -564,6 +564,22 @@ When deployment is complete, you will be given a link to the deployed site.
 - No results Icon [Icons8](https://icons8.com/icon/12773/search)
 - Upload Icon [Icons8](https://icons8.com/icon/113801/upload)
 - Favicon [Favicon](https://www.flaticon.com/free-icon/golf-ball_523666?term=golf+ball&page=1&position=12&origin=tag&related_id=523666)
+- Sign In/Up [picture](https://www.pexels.com/photo/close-up-photo-of-golf-ball-2828723/)
+- Post picture [1](https://unsplash.com/photos/man-in-white-t-shirt-and-black-shorts-playing-golf-during-daytime-6LeTXoIokvI)
+- Post picture [2](
+  https://unsplash.com/photos/man-in-black-shirt-and-pants-standing-on-green-grass-field-under-white-clouds-and-blue-Yu6Z_Fia1Ls
+)
+- Post picture [3](https://unsplash.com/photos/white-golf-ball-on-green-grass-field-SzSNFsD3wOI)
+- Post picture [4](https://unsplash.com/photos/2-person-walking-on-green-grass-field-during-daytime-Nmh-pEBRt2Y)
+- Post picture [5](https://www.pexels.com/photo/photo-of-man-golfing-on-grass-field-4652247/)
+- Post picture [6](https://www.pexels.com/photo/body-oof-water-2172499/)
+- Post picture [7](https://www.pexels.com/photo/sunny-morning-in-golf-park-12968071/)
+- Post picture [8](https://www.freepik.com/free-photo/back-view-man-playing-golf-field_12080001.htm#query=golf&position=27&from_view=search&track=sph&uuid=5cd63923-3cde-479b-ac12-662f1f57561a)
+- Post picture [9](https://www.pexels.com/photo/golf-club-hitting-ball-on-field-7758348/)
+- Post picture [10](https://www.freepik.com/free-photo/professional-golfer-bali-indonesia_10506873.htm#query=golf&position=41&from_view=search&track=sph&uuid=5cd63923-3cde-479b-ac12-662f1f57561a
+)
+- Post picture [11](https://www.pexels.com/photo/green-grass-field-and-trees-4062914/)
+
 
 - [Google Fonts Poppins](https://fonts.google.com/?query=lato&sort=popularity)
 - [Google Fonts Varela Round](https://fonts.google.com/specimen/Varela+Round)
