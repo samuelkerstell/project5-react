@@ -36,7 +36,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
+
     }
   };
 
@@ -61,7 +61,7 @@ export const ProfileDataProvider = ({ children }) => {
         },
       }));
     } catch (err) {
-      console.log(err);
+
     }
   };
 
@@ -76,7 +76,7 @@ export const ProfileDataProvider = ({ children }) => {
           recommendedProfiles: data,
         }));
       } catch (err) {
-        console.log(err);
+
       }
     };
 

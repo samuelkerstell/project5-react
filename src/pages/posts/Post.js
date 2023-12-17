@@ -50,14 +50,12 @@ const Post = (props) => {
       await axiosRes.delete(`/posts/${id}/`);
       history.goBack();
     } catch (err) {
-      console.log(err);
     }
   };
 
   //If disliked it removes the dislike and adds a like, if not disliked it likes
   const handleLike = async () => {
     try {
-      console.log('Attempting to handle like...');
       if (isDisliked && !isLiked) {
         await axiosRes.delete(`/dislikes/${dislike_id}/`);
         setPosts((prevPosts) => ({
@@ -78,10 +76,9 @@ const Post = (props) => {
           )),
         }));
         setIsLiked(true);
-        console.log('Like action successful!');
       }
     } catch (err) {
-      console.log(err);
+  
     }
   };
   
@@ -98,7 +95,6 @@ const Post = (props) => {
       }));
       setIsLiked(false);
     } catch (err) {
-      console.log(err);
     }
   };
   
@@ -127,7 +123,6 @@ const Post = (props) => {
         setIsDisliked(true);
       }
     } catch (err) {
-      console.log(err);
     }
   };
 
@@ -144,7 +139,7 @@ const Post = (props) => {
       }));
       setIsDisliked(false);
     } catch (err) {
-      console.log(err);
+
     }
   };
 

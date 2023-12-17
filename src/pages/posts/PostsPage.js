@@ -34,12 +34,11 @@ function PostsPage({ message, filter = ""}) {
     const fetchPosts = async () => {
       try {
         const url = `/posts/?${filter}search=${query}`;
-        console.log('url', JSON.stringify(url, null, 2));
         const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
         setPosts(data);
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+
       }
     };
 
